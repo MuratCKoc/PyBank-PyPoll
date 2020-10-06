@@ -2,7 +2,7 @@ import csv
 
 
 #def main():
-with open('budget_data.csv') as csv_file:
+with open("Resources/budget_data.csv") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     lineCounter = 0
     totalAmount = 0
