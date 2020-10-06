@@ -5,6 +5,7 @@ vote_csv = os.path.join("Resources","test.csv")
 # Declare global variables
 voteDict = {}
 voteCounter = 0
+founde = 0
 # Function to create new record
 # Function to increment vote count
 # Display and write to a file
@@ -21,8 +22,17 @@ with open(vote_csv, "r") as csvfile:
     for row in csvreader:
         print (row)
 
-    # Check if candidate exist
-    # If not exist create a new record
-    # If candidate exists then increment the vote count
+        # Increment the vote counter
+        voteCounter += 1
+        # Check if candidate exist
+        if row[2] in voteDict :
+            voteDict[row[2]] += 1
+        # If not exist create a new record
+        else:
+            voteDict[row[2]] = 1
+    print (voteCounter)
+    print (voteDict)
+
+    
 
 
