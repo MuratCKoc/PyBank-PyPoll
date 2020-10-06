@@ -28,7 +28,21 @@ def printResults(l):
     print("-------------------------")
     print(f'Winner: {l[0][0]}')
     print("-------------------------")
-    
+
+def exportReport(fileName):
+    with open(fileName,"w") as fileX:
+        fileX = open(fileName,"w+")
+
+        fileX.write("Election Results\n")
+        fileX.write("-------------------------\n")
+        fileX.write(f"Total Votes: {totalVotes}\n")
+        fileX.write("-------------------------\n")
+        for iter in l:
+            fileX.write(f"{iter[0]}: {iter[2]}% ({iter[1]})\n")
+        fileX.write("-------------------------\n")
+        fileX.write(f'Winner: {l[0][0]}\n')
+        fileX.write("-------------------------")
+
 # Main Loop
 # Read file
 with open(vote_csv, "r") as csvfile:
@@ -71,7 +85,7 @@ with open(vote_csv, "r") as csvfile:
     # sorted_dict = sorted(new_dict.items(), key=lambda kv: kv[1], reverse=True)
     # Destructure dictionary
     printResults(l)
-    
+    exportReport("test.txt")
     print(f'keys {voteCandidates}')
     print(f'values {voteCounts}')
     #print (x)
