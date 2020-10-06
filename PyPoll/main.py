@@ -40,7 +40,5 @@ with open(vote_csv, "r") as csvfile:
     for val in voteCounts:
         votePercentage.append(round((val/voteCounter)*100,3))
     print(f'Percentage {votePercentage}')
-
-    
-
-
+    resultsDict = zip(voteCandidates, voteCounts, votePercentage)
+    print (tuple(resultsDict))
