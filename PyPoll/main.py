@@ -2,14 +2,16 @@ import csv
 import os
 import operator
 
-vote_csv = os.path.join("Resources","test.csv")
+# Filepath for input and output
+write_txt = os.path.join("analysis","results.txt")
+
+vote_csv = os.path.join("Resources","election_data.csv")
+
 # Declare global variables
 voteDict = {}
 totalVotes = 0
 
 
-# Display and write to a file
-# Percentage calculator function
 
 # Sort the dictionary
 def sortDict(e):
@@ -29,10 +31,9 @@ def printResults(l):
     print(f'Winner: {l[0][0]}')
     print("-------------------------")
 
-def exportReport(fileName):
-    with open(fileName,"w") as fileX:
-        fileX = open(fileName,"w+")
-
+def exportReport():
+    with open(write_txt,"w") as fileX:
+        
         fileX.write("Election Results\n")
         fileX.write("-------------------------\n")
         fileX.write(f"Total Votes: {totalVotes}\n")
@@ -43,6 +44,10 @@ def exportReport(fileName):
         fileX.write(f'Winner: {l[0][0]}\n')
         fileX.write("-------------------------")
 
+
+# Percentage calculator function
+
+
 # Main Loop
 # Read file
 with open(vote_csv, "r") as csvfile:
@@ -52,8 +57,6 @@ with open(vote_csv, "r") as csvfile:
     header = next(csvreader)
     
     for row in csvreader:
-        print (row)
-
         # Increment the vote counter
         totalVotes += 1
         # Check if candidate exist
@@ -62,8 +65,6 @@ with open(vote_csv, "r") as csvfile:
         # If not exist create a new record
         else:
             voteDict[row[2]] = 1
-    print (totalVotes)
-    print (voteDict)
 
     # Sort the dictionary by voteCount 
     
@@ -73,19 +74,11 @@ with open(vote_csv, "r") as csvfile:
     votePercentage = []
     for val in voteCounts:
         votePercentage.append(round((val/totalVotes)*100,3))
-    print(f'Percentage {votePercentage}')
 
     # Zip list of values and sort them by number of votes
     l = list(zip(voteCandidates,voteCounts,votePercentage))
     l.sort(key=byVoteCount,reverse=True)
-    print (f'list: -- {l}')
 
-    #new_dict = {k: dict(zip(voteCandidates,v)) for k, v in zip(voteCandidates, zip(voteCounts,votePercentage))}
-    #print (new_dict)
-    # sorted_dict = sorted(new_dict.items(), key=lambda kv: kv[1], reverse=True)
-    # Destructure dictionary
+    # Print Results
     printResults(l)
-    exportReport("test.txt")
-    print(f'keys {voteCandidates}')
-    print(f'values {voteCounts}')
-    #print (x)
+    exportReport()
