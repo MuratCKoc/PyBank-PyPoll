@@ -18,6 +18,17 @@ def sortDict(e):
 def byVoteCount(elem):
     return elem[1]
 
+def printResults(l):
+    print("Election Results")
+    print("-------------------------")
+    print(f"Total Votes: {totalVotes}")
+    print("-------------------------")
+    for iter in l:
+        print(f"{iter[0]}: {iter[2]}% ({iter[1]})")
+    print("-------------------------")
+    print(f'Winner: {l[0][0]}')
+    print("-------------------------")
+    
 # Main Loop
 # Read file
 with open(vote_csv, "r") as csvfile:
@@ -59,7 +70,7 @@ with open(vote_csv, "r") as csvfile:
     #print (new_dict)
     # sorted_dict = sorted(new_dict.items(), key=lambda kv: kv[1], reverse=True)
     # Destructure dictionary
-    
+    printResults(l)
     
     print(f'keys {voteCandidates}')
     print(f'values {voteCounts}')
