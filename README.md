@@ -1,18 +1,18 @@
 # python-challenge
 
-* Inside of each folder that you just created, add the following:
+* Inside of each folder that I created:
 
   * A `main.py`. This is the main script to run for each analysis.
   * A "Resources" folder that contains the CSV files used.
-  * An "analysis" folder that contains your text file that has the results from your analysis.
+  * An "analysis" folder that contains your text file that has the results from my analysis.
 
 ## PyBank
 
 ![Revenue](Images/revenue-per-lead.png)
 
-* In this challenge, creating a Python script for analyzing the financial records of your company. You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`. 
+* In this challenge, I created a Python script for analyzing the financial records of your company. You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`. 
 
-* Create a Python script that analyzes the records to calculate each of the following:
+* I created a Python script that analyzes the records to calculate each of the following:
 
   - [x] The total number of months included in the dataset
 
@@ -36,15 +36,14 @@
   Greatest Decrease in Profits: Sep-2013 ($-2196167)
   ```
 
-- [x] In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+- [x] In addition, my final script both print the analysis to the terminal and export a text file with the results.
 
 ## PyPoll
 
 ![Vote Counting](Images/Vote_counting.png)
 
-* In this challenge, you are tasked with helping a small, rural town modernize its vote counting process.
 
-* You will be give a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. Your task is to create a Python script that analyzes the votes and calculates each of the following:
+* You will be give a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. I created a Python script that analyzes the votes and calculates each of the following:
 
   - [x] The total number of votes cast
 
@@ -56,7 +55,7 @@
 
   - [x] The winner of the election based on popular vote.
 
-* As an example, your analysis should look similar to the one below:
+* As an example, my analysis look similar to the one below:
 
   ```text
   Election Results
@@ -72,6 +71,6 @@
   -------------------------
   ```
 
-- [x] In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+- [x] In addition, my final script both print the analysis to the terminal and export a text file with the results.
 
 
